@@ -32,7 +32,7 @@ changes to root directory '/'
 does nothing, remain in root directory
 
  The commands "cd /" followed by "mkdir stuff" are run, what happens? 
-makes a directory 'stuff' in the root directory
+makes a directory 'stuff' in the root directory - provided you have permission to do so (i.e. if you are root)
 
  Typing "cd \" causes what to happen? 
 nothing - the backslash makes a new line in the shell allowing for more input. If return key is pressed again, then takes to user's home directory
