@@ -1,0 +1,45 @@
+ What is the environment variable $PATH? 
+a variable that contains a colon seperated list of all the paths to programs on the system
+
+ Show me the value of $PATH 
+for me it is: /sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/home/wizzdom/.local/bin:/home/wizzdom/.local/share/gem/ruby/3.0.0/bin:/home/wizzdom/.dotnet/tools:/home/wizzdom/scripts:/home/wizzdom/.local/bin:/home/wizzdom/.local/share/gem/ruby/3.0.0/bin:/home/wizzdom/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/wizzdom/.local/bin:/home/wizzdom/.local/share/gem/ruby/3.0.0/bin:/home/wizzdom/.dotnet/tools:/home/wizzdom/scripts Usually contains at least: /sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:$HOME/.local/bin
+
+ Find what directory "ls" is in. 
+use command: "which ls" - /bin/ls which is symliked to /sbin/ls
+
+ Show the file size of the "ls" program. 
+use command: "ls -lh /sbin/ls" - 135K on my system
+
+ Two programs, in different directories, have the same name. One is a system program. The other is a script that you wrote. What happens when you type that name? 
+the system's program will run (usually)
+
+ In the previous, if you find the system program is running when you type that name, how can you make sure that your program runs instead? 
+add the script's directory to the PATH variable before the path of the directory of the system program for it to take precedence
+
+ EXTRA QUESTION (only for experienced Linux people): Get the value of $PATH and translate all the ":" characters to newline characters. 
+echo $PATH | sed 's/:/\n/g'
+
+ Issuing the command gedit will do what? 
+open the GNOME test editor in a new window, logs,warning and error messages appear in terminal and program keeps a hold on the terminal so it cannot take any more input
+
+ Issuing the command gedit & will do what? 
+open the GNOME test editor in a new window, logs,warning and error messages appear in terminal but app is forket into the background so terminal is still available to take input
+
+ What is the effect of the following Linux command? ls -al > myfile 
+adds the names of all the the contents of the current directory to a file called 'myfile'
+
+ What will this do? cd ls -alR 
+list all the contents of the user's home directory recursively (including children of those directories) in long format
+
+ What will this do? cd / ls -alR 
+list all the contents of the root directory recursively (lists all the files and folders in the whole system)
+
+ What will this do? cd / ls -al > outputfile.log 
+changes directory to root directory and makes a file there called 'outputfile.log' which contains a list of all the files in the root directory in long format (if the user has permission to make a file there, if not it will raise an error)
+
+ What will this do? cd / ls -al > $HOME/outputfile.log 
+changes directory to root directory and makes a file in the user's home directory called 'outputfile.log' which contains a list of all the files in the root directory in long format
+
+ Typing the command man man > man does what? 
+makes a file in the current directory called 'man' which contains the manual page for the 'man' command
+
