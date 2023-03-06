@@ -1,0 +1,40 @@
+ Go into my Shakespeare directory. How many sub-directories does it have? How to get the machine to count things: Pipe the output to the "word count" program. 
+44 (find -type d | wc -l)
+
+ List all files called complete.html one level down from this directory. 
+ls */complete.html | wc -l
+
+ Find Act 3 of Macbeth. The size of this file is what? 
+1M
+
+ List all "Act 6" files in all plays. 
+ls */act6.html
+
+ From your home directory, list all the "Act 6" files without changing directory. 
+ls /users/tutors/mhumphrysdculab/share/shakespeare/*/act6.html
+
+ In how many lines of the plays does the string "for Ireland" (exact case) appear? Count the number of lines it appears on in the files called complete.html. 
+7 (grep "for Ireland" /users/tutors/mhumphrysdculab/share/shakespeare/*/complete.html | wc -l)
+
+ In how many different plays does the string "for Ireland" appear? Count the number of files it appears in in the files called complete.html. 
+3 (grep "for Ireland" -l /users/tutors/mhumphrysdculab/share/shakespeare/*/complete.html | wc -l)
+
+ Show all lines in the complete.html files that contain "Scot" but not "Scots" or "Scotland" or "Scottish". 
+grep "Scot" -w /users/tutors/mhumphrysdculab/share/shakespeare/*/complete.html | wc -l
+
+ How many times does the string "Scotland" appear in Act 3 of a Shakespeare play? Q. How would you find the answer to the previous using Google? 
+8 (grep "Scotland" /users/tutors/mhumphrysdculab/share/shakespeare/*/act3.html | wc -l)
+
+ List all the plays in which the word "because" occurs. Just list the names of the plays that have at least one hit. Do not list the hits. Can do this using grep with a certain option. 
+grep "because" -l /users/tutors/mhumphrysdculab/share/shakespeare/*/complete.html
+
+ List all the plays in which the word "because" does not occur. Can do this using grep with a certain option. 
+grep -L "because" /users/tutors/mhumphrysdculab/share/shakespeare/*/complete.html
+
+ List all the web pages (HTML files). They are all one level down. 
+ls */*.html
+
+ We have converted the DCU web server from http: to https: We need to fix old links. Search for the string "http://computing.dcu.ie" in all the web pages. Q. How would you find that string in all web pages using a Web browser? Or using a text editor? 
+grep "http://computing.dcu.ie" */*.html
+
+
